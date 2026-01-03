@@ -155,12 +155,12 @@ export const projects: Project[] = [
     {
         id: 3,
         title: "Rockport",
-        subtitle: "Contemporary interiors with stunning exterior views",
+        subtitle: "New construction with contemporary interiors and stunning views",
         slug: "rockport",
         location: "Rockport, MA",
         year: "2023",
         description:
-            "A comprehensive interior transformation featuring modern design elements and premium finishes throughout. The project highlights our attention to detail and commitment to creating cohesive, beautifully crafted living spaces.",
+            "A beautiful new construction featuring modern design elements and premium finishes throughout. The project highlights our attention to detail and commitment to creating cohesive, beautifully crafted living spaces.",
         thumbnail: kelvinThumb,
         images: [
             kelvin1,
