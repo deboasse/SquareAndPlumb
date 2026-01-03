@@ -1,4 +1,5 @@
 import { BrowserRouter as Router, Routes, Route, Navigate } from "react-router-dom";
+import { SpeedInsights } from "@vercel/speed-insights/react";
 import { Navigation } from "./components/Navigation";
 import { Footer } from "./components/Footer";
 import { Home } from "./pages/Home";
@@ -22,6 +23,7 @@ export default function App() {
           <Route path="*" element={<Navigate to="/" replace />} />
         </Routes>
         <Footer />
+        <SpeedInsights />
       </div>
     </Router>
   );
