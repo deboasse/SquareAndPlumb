@@ -62,9 +62,10 @@ export function Footer() {
             fontSize: '0.95rem',
             lineHeight: '1.6',
           }}>
-            <p style={{ margin: 0 }}>123 Main Street, Suite 100</p>
-            <p style={{ margin: 0 }}>Your City, State 12345</p>
-            <p style={{ margin: 0 }}>info@squareandplumb.com</p>
+            <p style={{ margin: 0 }}>978-855-8208</p>
+            <p style={{ margin: 0 }}>rita@squareandplumb.com</p>
+            <p style={{ margin: 0 }}>PO Box 6077</p>
+            <p style={{ margin: 0 }}>Gloucester, MA 01930</p>
           </div>
 
           {/* Contact Button */}

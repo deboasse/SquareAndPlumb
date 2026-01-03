@@ -71,7 +71,7 @@ export function Navigation() {
               src={logo}
               alt="Square & Plumb Builders"
               style={{
-                height: isMobile ? '32px' : '48px',
+                height: isMobile ? '38px' : '48px',
                 maxWidth: 'none',
                 filter: (!scrolled && showLogoAlways)
                   ? 'brightness(0) invert(1) drop-shadow(0 4px 8px rgba(0, 0, 0, 0.5)) drop-shadow(0 2px 4px rgba(0, 0, 0, 0.4))'
@@ -85,16 +85,6 @@ export function Navigation() {
           {!isMobile && (
             <div style={{ display: 'flex', alignItems: 'center', gap: '2rem' }}>
               <Link
-                to="/work"
-                style={{
-                  color: scrolled ? '#1a1a1a' : 'white',
-                  textDecoration: 'none',
-                  transition: 'color 0.3s ease',
-                }}
-              >
-                Our Work
-              </Link>
-              <Link
                 to="/about"
                 style={{
                   color: scrolled ? '#1a1a1a' : 'white',
@@ -103,6 +93,16 @@ export function Navigation() {
                 }}
               >
                 About Us
+              </Link>
+              <Link
+                to="/work"
+                style={{
+                  color: scrolled ? '#1a1a1a' : 'white',
+                  textDecoration: 'none',
+                  transition: 'color 0.3s ease',
+                }}
+              >
+                Our Work
               </Link>
               <Link
                 to="/contact"
@@ -230,18 +230,18 @@ export function Navigation() {
 
           <div style={{ padding: '4rem 1.5rem 1.5rem', display: 'flex', flexDirection: 'column', gap: '1.5rem' }}>
             <Link
-              to="/work"
-              style={{ color: '#1a1a1a', fontSize: '1.125rem', textDecoration: 'none' }}
-              onClick={() => setMobileMenuOpen(false)}
-            >
-              Our Work
-            </Link>
-            <Link
               to="/about"
               style={{ color: '#1a1a1a', fontSize: '1.125rem', textDecoration: 'none' }}
               onClick={() => setMobileMenuOpen(false)}
             >
               About Us
+            </Link>
+            <Link
+              to="/work"
+              style={{ color: '#1a1a1a', fontSize: '1.125rem', textDecoration: 'none' }}
+              onClick={() => setMobileMenuOpen(false)}
+            >
+              Our Work
             </Link>
             <Link
               to="/contact"

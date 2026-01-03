@@ -79,16 +79,6 @@ import sagamore15 from "../../storage/Sagamore/bmf_6030.jpeg";
 import sagamore16 from "../../storage/Sagamore/bmf_6039.jpeg";
 import sagamore17 from "../../storage/Sagamore/bmf_6042.jpeg";
 
-// Import Others images
-import othersThumb from "../../storage/Outros/FotoatrasbuildwithusKitchen2.jpeg";
-import others1 from "../../storage/Outros/FotoatrasbuildwithusKitchen2.jpeg";
-import others2 from "../../storage/Outros/EssexBathroom2HR.jpeg";
-import others3 from "../../storage/Outros/IMG_0018.jpeg";
-import others4 from "../../storage/Outros/IMG_0022.jpeg";
-import others5 from "../../storage/Outros/IMG_4707.jpeg";
-import others6 from "../../storage/Outros/IMG_8644.jpeg";
-import others7 from "../../storage/Outros/Neal RD.jpeg";
-import others8 from "../../storage/Outros/Neal Rd 4.jpeg";
 
 export interface Project {
     id: number;
@@ -108,9 +98,9 @@ export { ourWorkBg };
 export const projects: Project[] = [
     {
         id: 1,
-        title: "Sylvester",
+        title: "Gloucester",
         subtitle: "Complete transformation with custom decking and outdoor living",
-        slug: "sylvester",
+        slug: "gloucester",
         location: "Gloucester, MA",
         year: "2024",
         description:
@@ -147,9 +137,9 @@ export const projects: Project[] = [
     },
     {
         id: 2,
-        title: "Argilla",
+        title: "Essex",
         subtitle: "Modern elegance with refined interior finishes",
-        slug: "argilla",
+        slug: "essex",
         location: "Essex, MA",
         year: "2024",
         description:
@@ -164,9 +154,9 @@ export const projects: Project[] = [
     },
     {
         id: 3,
-        title: "Kelvin",
+        title: "Rockport",
         subtitle: "Contemporary interiors with stunning exterior views",
-        slug: "kelvin",
+        slug: "rockport",
         location: "Rockport, MA",
         year: "2023",
         description:
@@ -194,9 +184,9 @@ export const projects: Project[] = [
     },
     {
         id: 4,
-        title: "Sagamore",
+        title: "Manchester",
         subtitle: "Luxury bathroom and bedroom renovations with premium details",
-        slug: "sagamore",
+        slug: "manchester",
         location: "Manchester, MA",
         year: "2024",
         description:
@@ -220,27 +210,6 @@ export const projects: Project[] = [
             sagamore15,
             sagamore16,
             sagamore17,
-        ],
-    },
-    {
-        id: 5,
-        title: "Others",
-        subtitle: "Diverse portfolio of exceptional craftsmanship",
-        slug: "others",
-        location: "North Shore, MA",
-        year: "2023-2024",
-        description:
-            "A collection showcasing the breadth of our work across various projects. From kitchen renovations to bathroom transformations, each space demonstrates our versatile expertise and unwavering commitment to quality construction.",
-        thumbnail: othersThumb,
-        images: [
-            others1,
-            others2,
-            others3,
-            others4,
-            others5,
-            others6,
-            others7,
-            others8,
         ],
     },
 ];

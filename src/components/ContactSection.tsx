@@ -20,11 +20,44 @@ export function ContactSection() {
     hearAboutUs: "",
     message: "",
   });
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitStatus, setSubmitStatus] = useState<'idle' | 'success' | 'error'>('idle');
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    console.log("Form submitted:", formData);
-    // Handle form submission
+    setIsSubmitting(true);
+    setSubmitStatus('idle');
+
+    try {
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),
+      });
+
+      if (response.ok) {
+        setSubmitStatus('success');
+        setFormData({
+          name: "",
+          email: "",
+          phone: "",
+          projectType: "",
+          projectAddress: "",
+          idealTimeline: "",
+          hearAboutUs: "",
+          message: "",
+        });
+      } else {
+        setSubmitStatus('error');
+      }
+    } catch (error) {
+      console.error('Submission error:', error);
+      setSubmitStatus('error');
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -44,17 +77,16 @@ export function ContactSection() {
               <div className="space-y-6">
                 <div>
                   <h3 className="text-[#1a1a1a] mb-2">Email</h3>
-                  <p className="text-[#5a5a5a]">info@squareandplumb.com</p>
+                  <p className="text-[#5a5a5a]">Info@squareandplumb.com</p>
                 </div>
                 <div>
                   <h3 className="text-[#1a1a1a] mb-2">Phone</h3>
-                  <p className="text-[#5a5a5a]">978-855-8208</p>
+                  <p className="text-[#5a5a5a]">978-424-1354</p>
                 </div>
                 <div>
                   <h3 className="text-[#1a1a1a] mb-2">Location</h3>
-                  <p className="text-[#5a5a5a]">
-                    Gloucester MA, 01930
-                  </p>
+                  <p className="text-[#5a5a5a]">PO Box 6077</p>
+                  <p className="text-[#5a5a5a]">Gloucester, MA 01930</p>
                 </div>
               </div>
             </div>
@@ -121,6 +153,9 @@ export function ContactSection() {
                     <SelectContent>
                       <SelectItem value="remodel-addition">
                         Remodel/Addition
+                      </SelectItem>
+                      <SelectItem value="adu">
+                        Accessory Dwelling Units (ADU)
                       </SelectItem>
                       <SelectItem value="new-construction">
                         New Construction
@@ -191,10 +226,23 @@ export function ContactSection() {
 
                 <button
                   type="submit"
-                  className="w-full bg-white border-2 border-[#ED1C24] text-[#ED1C24] py-4 px-8 hover:bg-[#ED1C24] hover:text-white transition-all duration-300 mt-8"
+                  disabled={isSubmitting}
+                  className="w-full bg-white border-2 border-[#ED1C24] text-[#ED1C24] py-4 px-8 hover:bg-[#ED1C24] hover:text-white transition-all duration-300 mt-8 disabled:opacity-50 disabled:cursor-not-allowed"
                 >
-                  Send
+                  {isSubmitting ? 'Sending...' : 'Send'}
                 </button>
+
+                {submitStatus === 'success' && (
+                  <div className="mt-4 p-4 bg-green-50 border border-green-200 text-green-700 rounded">
+                    Thank you! Your message has been sent successfully. We'll be in touch soon.
+                  </div>
+                )}
+
+                {submitStatus === 'error' && (
+                  <div className="mt-4 p-4 bg-red-50 border border-red-200 text-red-700 rounded">
+                    Sorry, there was an error sending your message. Please try again or email us directly.
+                  </div>
+                )}
               </form>
             </div>
           </div>

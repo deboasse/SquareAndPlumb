@@ -1,8 +1,10 @@
+import { useState } from "react";
 import { ImageWithFallback } from "../components/figma/ImageWithFallback";
 import { Link } from "react-router-dom";
 import missionImage from "figma:asset/2537d0dbb3600a03bbb6f4aee2ace4777d30e32f.png";
 import valuesImage from "figma:asset/5570eb25b3183f1244543f408f8faf29501147e0.png";
-import heroImage from "figma:asset/c098ea4b4d891a3def8dbcfbadc68ec83d405461.png";
+import heroImage from "../../storage/porch-columns.jpg";
+import processImage from "../../storage/process-kitchen.jpg";
 
 export function About() {
   return (
@@ -54,49 +56,7 @@ export function About() {
       </section>
 
       {/* Our Process */}
-      <section className="py-32 bg-[#f5f5f5]">
-        <div className="container mx-auto px-6 max-w-6xl">
-          <div className="text-center mb-12">
-            <div className="w-16 h-0.5 bg-[#C9A961] mx-auto mb-8"></div>
-            <h2 className="text-4xl text-[#1a1a1a] mb-6">Our Process</h2>
-            <p className="text-[#5a5a5a] leading-relaxed max-w-3xl mx-auto">
-              Square & Plumb Builders believes in an integrated approach to building your project and we are ready to help with your construction needs. You can count on us to support you throughout your project. Here is what our process looks like:
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-12 mt-16">
-            <div>
-              <div className="text-5xl text-[#ED1C24] mb-4">01</div>
-              <h3 className="mb-4 text-[#1a1a1a]">Discovery Call</h3>
-              <p className="text-[#5a5a5a] leading-relaxed">
-                Brief phone consultation to get to know you, your goals, vision, timeline and all in budget. It all starts with honest conversations so we learn what is important to you and you learn what to expect from us.
-              </p>
-            </div>
-            <div>
-              <div className="text-5xl text-[#ED1C24] mb-4">02</div>
-              <h3 className="mb-4 text-[#1a1a1a]">Complimentary Site Visit</h3>
-              <p className="text-[#5a5a5a] leading-relaxed">
-                We will conduct an evaluation of the site, measure the space, capture photos and videos, make lots of notes, answer questions, talk about realistic expectations and price range. Finally, we will discuss pre-construction to cover all the necessary planning leading up to the construction.
-              </p>
-            </div>
-            <div>
-              <div className="text-5xl text-[#ED1C24] mb-4">03</div>
-              <h3 className="mb-4 text-[#1a1a1a]">Build</h3>
-              <p className="text-[#5a5a5a] leading-relaxed">
-                Following pre-construction/design completion and the estimate is accepted, we will focus on execution, managing the entire construction process from permitting to coordinating timeline and trade partners.
-              </p>
-            </div>
-            <div>
-              <div className="text-5xl text-[#ED1C24] mb-4">04</div>
-              <h3 className="mb-4 text-[#1a1a1a]">Post-Construction</h3>
-              <p className="text-[#5a5a5a] leading-relaxed">
-                We will provide warranty, review your home systems, talk about on going maintenance and repair support. Homes last when they are maintained regularly.
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
-
+      <ProcessSection />
       {/* Values Section */}
       <section className="py-32 bg-white">
         <div className="container mx-auto px-6 max-w-6xl">
@@ -166,5 +126,88 @@ export function About() {
         </div>
       </section>
     </>
+  );
+}
+
+// Process Section Component with Accordion
+function ProcessSection() {
+  const [openIndex, setOpenIndex] = useState<number>(0);
+
+  const steps = [
+    {
+      title: "Discovery",
+      content: "Begins with meeting our executive team through an introductory meeting. Project goals are established. Then, budget alignment is tested through a feasibility study or high-level estimate before moving into a formal agreement."
+    },
+    {
+      title: "Pre-Construction",
+      content: "We will conduct an evaluation of the site, measure the space, capture photos and videos, make lots of notes, answer questions, talk about realistic expectations and price range. Finally, we will discuss pre-construction to cover all the necessary planning leading up to the construction."
+    },
+    {
+      title: "Construction",
+      content: "Following pre-construction/design completion and the estimate is accepted, we will focus on execution, managing the entire construction process from permitting to coordinating timeline and trade partners."
+    },
+    {
+      title: "Post-Construction",
+      content: "We will provide warranty, review your home systems, talk about ongoing maintenance and repair support. Homes last when they are maintained regularly."
+    }
+  ];
+
+  return (
+    <section className="py-32 bg-[#f5f5f5]">
+      <div className="container mx-auto px-6 max-w-6xl">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
+          {/* Left Column - Image */}
+          <div className="relative">
+            <img
+              src={processImage}
+              alt="Our Process - Modern kitchen renovation"
+              className="w-full h-[600px] object-cover"
+            />
+          </div>
+
+          {/* Right Column - Content & Accordion */}
+          <div className="flex flex-col justify-center">
+            <div className="w-16 h-0.5 bg-[#C9A961] mb-8"></div>
+            <h2 className="text-4xl mb-6 text-[#1a1a1a]">Our Process</h2>
+            <p className="text-[#5a5a5a] leading-relaxed mb-8">
+              Square & Plumb Builders believes in an integrated approach to building your project. Here is what our process looks like:
+            </p>
+
+            {/* Accordion */}
+            <div className="space-y-0">
+              {steps.map((step, index) => (
+                <div key={index}>
+                  <div
+                    style={{ borderTop: '1px solid #C9A961' }}
+                  >
+                    <button
+                      onClick={() => setOpenIndex(openIndex === index ? -1 : index)}
+                      className="w-full py-4 flex justify-between items-center text-left"
+                      style={{ color: '#5a5a5a' }}
+                    >
+                      <span className="text-lg font-medium" style={{ color: openIndex === index ? '#1a1a1a' : '#5a5a5a' }}>
+                        {step.title}
+                      </span>
+                      <span className="text-2xl" style={{ color: '#5a5a5a' }}>
+                        {openIndex === index ? '−' : '+'}
+                      </span>
+                    </button>
+                    {openIndex === index && (
+                      <div className="pb-6">
+                        <p className="text-[#5a5a5a] leading-relaxed">
+                          {step.content}
+                        </p>
+                      </div>
+                    )}
+                  </div>
+                </div>
+              ))}
+              {/* Bottom border */}
+              <div style={{ borderTop: '1px solid #C9A961' }}></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
   );
 }
