@@ -98,11 +98,11 @@ export { ourWorkBg };
 export const projects: Project[] = [
     {
         id: 1,
-        title: "Gloucester",
+        title: "Beverly 2025",
         subtitle: "Complete transformation with custom decking and outdoor living",
-        slug: "gloucester",
-        location: "Gloucester, MA",
-        year: "2024",
+        slug: "beverly-2025",
+        location: "Beverly, MA",
+        year: "2025",
         description:
             "A stunning complete renovation featuring custom decking, outdoor living spaces, an outdoor shower oasis, and beautifully finished basement entertainment areas. This project showcases our commitment to exceptional craftsmanship and attention to detail.",
         thumbnail: sylvesterThumb,
@@ -137,11 +137,11 @@ export const projects: Project[] = [
     },
     {
         id: 2,
-        title: "Essex",
+        title: "Ipswich 2023",
         subtitle: "Modern elegance with refined interior finishes",
-        slug: "essex",
-        location: "Essex, MA",
-        year: "2024",
+        slug: "ipswich-2023",
+        location: "Ipswich, MA",
+        year: "2023",
         description:
             "An exquisite renovation showcasing modern design principles with refined interior finishes. This project demonstrates our expertise in creating spaces that blend contemporary aesthetics with timeless elegance.",
         thumbnail: argillaThumb,
@@ -154,11 +154,11 @@ export const projects: Project[] = [
     },
     {
         id: 3,
-        title: "Rockport",
+        title: "Everett 2024",
         subtitle: "New construction with contemporary interiors and stunning views",
-        slug: "rockport",
-        location: "Rockport, MA",
-        year: "2023",
+        slug: "everett-2024",
+        location: "Everett, MA",
+        year: "2024",
         description:
             "A beautiful new construction featuring modern design elements and premium finishes throughout. The project highlights our attention to detail and commitment to creating cohesive, beautifully crafted living spaces.",
         thumbnail: kelvinThumb,
@@ -184,10 +184,10 @@ export const projects: Project[] = [
     },
     {
         id: 4,
-        title: "Manchester",
+        title: "Ipswich 2024",
         subtitle: "Luxury bathroom and bedroom renovations with premium details",
-        slug: "manchester",
-        location: "Manchester, MA",
+        slug: "ipswich-2024",
+        location: "Ipswich, MA",
         year: "2024",
         description:
             "A luxurious renovation featuring stunning bathroom designs, elegant bedroom spaces, and thoughtful architectural details throughout. This project exemplifies our dedication to creating refined living environments with exceptional craftsmanship.",

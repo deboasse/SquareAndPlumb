@@ -53,19 +53,27 @@ export function Footer() {
             </a>
           </div>
 
-          {/* Address - stacked vertically */}
+          {/* Contact Info - stacked vertically */}
           <div style={{
-            color: '#5a5a5a',
             display: 'flex',
             flexDirection: 'column',
-            gap: '0.25rem',
+            gap: '1rem',
             fontSize: '0.95rem',
             lineHeight: '1.6',
           }}>
-            <p style={{ margin: 0 }}>978-855-8208</p>
-            <p style={{ margin: 0 }}>rita@squareandplumb.com</p>
-            <p style={{ margin: 0 }}>PO Box 6077</p>
-            <p style={{ margin: 0 }}>Gloucester, MA 01930</p>
+            <div>
+              <h3 style={{ color: '#1a1a1a', margin: '0 0 0.25rem 0', fontSize: '1rem' }}>Email</h3>
+              <p style={{ color: '#5a5a5a', margin: 0 }}>Info@squareandplumb.com</p>
+            </div>
+            <div>
+              <h3 style={{ color: '#1a1a1a', margin: '0 0 0.25rem 0', fontSize: '1rem' }}>Phone</h3>
+              <p style={{ color: '#5a5a5a', margin: 0 }}>978-424-1354</p>
+            </div>
+            <div>
+              <h3 style={{ color: '#1a1a1a', margin: '0 0 0.25rem 0', fontSize: '1rem' }}>Location</h3>
+              <p style={{ color: '#5a5a5a', margin: 0 }}>PO Box 6077</p>
+              <p style={{ color: '#5a5a5a', margin: 0 }}>Gloucester, MA 01930</p>
+            </div>
           </div>
 
           {/* Contact Button */}
